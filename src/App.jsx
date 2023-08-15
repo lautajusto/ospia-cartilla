@@ -21,9 +21,9 @@ export default function App () {
 
   const fetchData = async () => {
     try {
-      const response1 = await fetch('http://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=9');
-      const response2 = await fetch('http://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=8');
-      const response3 = await fetch('http://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=13');
+      const response1 = await fetch('https://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=9');
+      const response2 = await fetch('https://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=8');
+      const response3 = await fetch('https://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=13');
 
       const jsonData1 = await response1.json();
       const jsonData2 = await response2.json();
