@@ -20,6 +20,7 @@ export default function App () {
   /* Llamados a las APIS para completar los campos de los selects */
 
   const fetchData = async () => {
+
     try {
       const response1 = await fetch('https://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=9');
       const response2 = await fetch('https://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=8');
@@ -57,21 +58,28 @@ export default function App () {
   const handleClick = (e) => {
    e.preventDefault()
    const apiUrl = `https://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=10&Usuario=101209&TipoPrestador=${selectedOption2}&Especialidad=${selectedOption1}&Localidad=${selectedOption3}`
-    
+  
+
    const fetchData = async () => {
        try {
            const response = await fetch(apiUrl);
            const jsonData = await response.json();
            const resFinal = jsonData.Data
             setDataFinal(resFinal);
-            console.log(resFinal)
-           
        }
        catch (error) {
            console.log('Error fetching data:', error);
        }
    }
-   fetchData()
+
+   /* Validación de selección de todos los selects */
+
+   if (selectedOption1 === '' || selectedOption2 === '' || selectedOption3 === '') {
+    alert('Seleccione todas las opciones correctamente')
+  } else {
+    fetchData()
+  }
+
   }
 
 /* Si existen más resultados, acá recorremos el response final */
@@ -96,13 +104,13 @@ export default function App () {
 
   /* Limpiamos el formulario */
 
-  const handleClean = (e) => {
-    e.preventDefault()
-    setDataFinal('');
-    setSelectedOption1('Seleccionar una opción')
-    setSelectedOption2('Seleccionar una opción')
-    setSelectedOption3('Seleccionar una opción')
-  }
+  // const handleClean = (e) => {
+  //   e.preventDefault()
+  //   setDataFinal('');
+  //   setSelectedOption1('Seleccionar una opción')
+  //   setSelectedOption2('Seleccionar una opción')
+  //   setSelectedOption3('Seleccionar una opción')
+  // }
 
 
   return (
@@ -144,10 +152,10 @@ export default function App () {
               ))}
             </select>
                 <button className='btn-search' onClick={handleClick}>Buscar</button>
-                { dataFinal === ''
+                {/* { dataFinal === ''
                 ? <></>
                 : <button className='btn-clean' onClick={handleClean}>Limpiar búsqueda</button>
-                }
+                } */}
           </div>
         </form>
 

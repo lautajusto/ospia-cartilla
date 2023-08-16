@@ -119,6 +119,8 @@ body {
     background: rgba(0,0,0,0.1);
     border-radius: 10px;
     margin-bottom: 25px;
+    height: 400px;
+    overflow-y: scroll;
 }
 
 .itemText {
