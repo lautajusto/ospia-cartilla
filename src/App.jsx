@@ -96,6 +96,12 @@ export default function App () {
             <br />
             <span className="itemText">Turnos: {item.Contactos[0].Detalle}</span>
             <br />
+            <br />
+            <a className='btn-map'
+            href={`https://maps.google.com/?q=${item.Latitud.toString().replace(",", ".")},${item.Longitud.toString().replace(",", ".")}`}>
+            Ir al Mapa
+            </a>
+            <br />
           </li>
         </div>
       )
