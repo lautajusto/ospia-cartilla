@@ -71,15 +71,7 @@ export default function App () {
            console.log('Error fetching data:', error);
        }
    }
-
-   /* Validación de selección de todos los selects */
-
-   if (selectedOption1 === '' || selectedOption2 === '' || selectedOption3 === '') {
-    alert('Seleccione todas las opciones correctamente')
-  } else {
-    fetchData()
-  }
-
+   fetchData()
   }
 
 /* Si existen más resultados, acá recorremos el response final */
@@ -126,7 +118,7 @@ export default function App () {
       <div className='containerPrincipal'>
         <form className='formPrincipal'>
           <div className='selector-container'>
-            <label>Especliadad</label>
+            <label>Especialiadad</label>
             <select id="selector1" value={selectedOption1} onChange={handleOptionChange1}>
               <option value="">Selecciona una opción</option>
               {data1.map((item) => (
