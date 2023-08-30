@@ -90,7 +90,10 @@ export default function App () {
             <br />
             <br />
             <a className='btn-map'
-            href={`https://maps.google.com/?q=${item.Latitud.toString().replace(",", ".")},${item.Longitud.toString().replace(",", ".")}`}>
+            href={`https://maps.google.com/?q=${item.Latitud.toString().replace(",", ".")},${item.Longitud.toString().replace(",", ".")}`}
+            target='_blank'
+            rel='noreferrer'
+            >
             Ir al Mapa
             </a>
             <br />
