@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import './styles/styles.css'
-import Logo from './assets/logo.png'
 
 export default function App () {
   
@@ -103,21 +101,9 @@ export default function App () {
      })
   }
 
-  /* Limpiamos el formulario */
-
-  // const handleClean = (e) => {
-  //   e.preventDefault()
-  //   setDataFinal('');
-  //   setSelectedOption1('Seleccionar una opción')
-  //   setSelectedOption2('Seleccionar una opción')
-  //   setSelectedOption3('Seleccionar una opción')
-  // }
-
 
   return (
     <div className="container">
-        <img src={Logo} className='logo' />
-        <h1 className='titleCartilla'>Cartilla Online</h1>
       <div className='containerPrincipal'>
         <form className='formPrincipal'>
           <div className='selector-container'>
@@ -166,29 +152,12 @@ export default function App () {
           : <div className='containerResult'>
               <div className='results'>
                   {results}
-              {/* <div className='mapContainer'>
-                  {dataFinal === ''
-                  ? <></>
-                  :
-                  <MapContainer center={[dataFinal.Latitud, dataFinal.Longitud]} zoom={13} scrollWheelZoom={false}>
-                  <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-                    <Marker position={[dataFinal.Latitud, dataFinal.Longitud]}>
-                      <Popup />
-                    </Marker>
-                </MapContainer>
-                  }
-              </div> */}
+              </div>
             </div>
+          }
         </div>
-        }
       </div>
-
-    </div>
-        <a href='https://ospiaprovincia.org/web' className='backToWeb'> Volver a la web </a>
-    </div>
+  </div>
    
   );
 }
