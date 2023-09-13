@@ -80,21 +80,25 @@ export default function App () {
       results.push(
         <div className="resultContainer">
           <li className="itemContainer" key={index}>
-            <span className="itemText">{item.Prestador}</span>
-            <br />
-            <span className="itemText">Domicilio: {item.Domicilio}</span>
-            <br />
-            <span className="itemText">Turnos: {item.Contactos[0].Detalle}</span>
-            <br />
-            <br />
-            <a className='btn-map'
-            href={`https://maps.google.com/?q=${item.Latitud.toString().replace(",", ".")},${item.Longitud.toString().replace(",", ".")}`}
-            target='_blank'
-            rel='noreferrer'
-            >
-            Ir al Mapa
-            </a>
-            <br />
+            <div className="result-container-text">
+              <span className="itemText">{item.Prestador}</span>
+              <br />
+              <span className="itemText">Domicilio: {item.Domicilio}</span>
+              <br />
+              <span className="itemText">Turnos: {item.Contactos[0].Detalle}</span>
+              <br />
+              <br />
+            </div>
+              <div className="result-container-map">
+              <a className='btn-map'
+                href={`https://maps.google.com/?q=${item.Latitud.toString().replace(",", ".")},${item.Longitud.toString().replace(",", ".")}`}
+                target='_blank'
+                rel='noreferrer'
+                >
+                Ir al Mapa
+              </a>
+              <br />
+              </div>
           </li>
         </div>
       )
