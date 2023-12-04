@@ -23,6 +23,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     margin-top: 25px;
 }
@@ -120,11 +121,16 @@ body {
     flex-wrap: no-wrap;
 }
 
+.containerPrincipal-results {
+    width: 100%;
+}
+
 .results {
     padding: 25px;
     background: rgba(0,0,0,0.1);
     border-radius: 10px;
     margin-bottom: 25px;
+    width: 650px;
     height: 330px;
     overflow-y: scroll;
 }
@@ -180,5 +186,9 @@ body {
 
     #selector1 {
         width: 100%
+    }
+
+    .itemContainer {
+        flex-direction: column;
     }
 }

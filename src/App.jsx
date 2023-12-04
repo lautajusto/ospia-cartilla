@@ -150,7 +150,7 @@ export default function App () {
           </div>
         </form>
 
-        <div>
+        <div className='containerPrincipal-results'>
           { dataFinal === undefined || ''
           ? <p className='noResult'>No existen coincidencias. Por favor realice una nueva busqueda</p>
           : <div className='containerResult'>
